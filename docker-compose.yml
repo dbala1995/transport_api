@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  backend_api:
+    build:
+      context: .
+      dockerfile: .
+    ports:
+      - 8000:8000
+    environment:
+      - APP_ID=${APP_ID}
+      - APP_KEY=${APP_KEY}
+      - TRANSPORT_DOMAIN=${TRANSPORT_DOMAIN}
+    volumes:
+      - ./app/:/code/app
